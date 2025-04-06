@@ -12,4 +12,6 @@ const Home = () => {
   )
 }
 
+console.log("Backend URL:", import.meta.env.VITE_BACKEND_VARIABLE);
+
 export default Home
