@@ -28,20 +28,22 @@ export const AppContextProvider =(props)=>{
         }
     }
 
-    const getUserData=async()=>{
-        try{
-            const {data} = await axios.get(backendUrl +'/api/user/data');
-            if (!userData) {
-                return <div className='mt-20 text-red'>Loading user info...</div>;
-              }
+    const getUserData = async () => {
+        try {
+          console.log("Calling /api/user/data...");
+          const { data } = await axios.get(backendUrl + '/api/user/data');
+          
+          if (data.success) {
+            setUserData(data.userData);
             console.log("Fetched user data:", data.userData);
-            data.success ? setUserData(data.userData) : toast.error(data.message)
-        }catch(error){
-            toast.error(error.message);
+          } else {
+            toast.error(data.message);
+          }
+        } catch (error) {
+          toast.error(error.message);
         }
-        
-
-    }
+      };
+      
 
     useEffect(()=>{
         getAuthState();

@@ -7,7 +7,7 @@ const Header = () => {
 
   const {userData}=useContext(AppContext)
   //const navigate=useNavigate()
-  console.log("userData in Header:", userData);
+  //console.log("userData in Header:", userData);
 
 
   return (
