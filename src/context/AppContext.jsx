@@ -48,6 +48,10 @@ export const AppContextProvider =(props)=>{
         getUserData
     }
 
+    console.log("isLoggedin:", isLoggedin);
+console.log("userData:", userData);
+
+
     return(
         <AppContext.Provider value={value}>
         {props.children}
