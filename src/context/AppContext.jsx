@@ -21,7 +21,7 @@ export const AppContextProvider =(props)=>{
 
             if(data.success){
                 setIsLoggedin(true)
-                getUserData()
+                await getUserData()
             }
         } catch (error) {
             toast.error(error.message)
@@ -31,6 +31,9 @@ export const AppContextProvider =(props)=>{
     const getUserData=async()=>{
         try{
             const {data} = await axios.get(backendUrl +'/api/user/data');
+            if (!userData) {
+                return <div className='mt-20 text-red'>Loading user info...</div>;
+              }
             console.log("Fetched user data:", data.userData);
             data.success ? setUserData(data.userData) : toast.error(data.message)
         }catch(error){
