@@ -7,7 +7,7 @@ import Header from '../components/Header';
 const Home = () => {
   useEffect(() => {
     toast.info('Please allow 3rd party cookies for this project.', {
-      position: 'top-right',
+      position: 'top-left',
       autoClose: 5000,
       hideProgressBar: false,
       closeOnClick: true,
