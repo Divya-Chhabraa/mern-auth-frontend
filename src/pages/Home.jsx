@@ -8,7 +8,7 @@ const Home = () => {
   useEffect(() => {
     toast.info('Please allow 3rd party cookies for this project.', {
       position: 'top-right',
-      autoClose: 30000,
+      autoClose: 5000,
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: true,
